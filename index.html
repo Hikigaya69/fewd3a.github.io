@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights Simulaitor</title>
+    <style>
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(download\ \(1\).png);
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-size: 27%;
+            background-blend-mode: darken;
+         
+        } 
+       /* .scrolltext{
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        margin-bottom: 10px;
+        padding-top: 10px;
+         justify-content: center; 
+        align-items: top;
+
+       }  */
+
+
+        .traffic-light{
+            width: 102px;
+            height: 302px;
+            border: 10px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .light{
+            width: 83px;
+            height: 83px;
+            border: 10px solid black;
+            border-radius: 50%;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             
+
+        }
+        .red{
+            background-color: red;
+
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+   
+
+
+    
+    
+    <div class="traffic-lights">
+    
+        <div class="light red">
+            STOP
+        </div>
+        <div class="light yellow">
+            READY
+        </div>
+        <div class=" light green">
+            GO
+        </div>
+      
+ <!-- <div class="scrolltext">
+    <h1>
+        PLEASE FOLLOW TRAFFIC RULES.
+    </h1>
+</div> -->
+      
+            
+   
+
+
+  
+   
+    </div>
+    <script>
+        const redLight=document.querySelector('.red');
+        const yellowLight=document.querySelector('.yellow');
+        const greenLight=document.querySelector('.green');
+
+
+        function changeLights()
+        {
+            setTimeout(()=>{
+                redLight.style.backgroundColor='red';
+                yellowLight.style.backgroundColor='transparent';
+                greenLight.style.backgroundColor='transparent';
+
+                setTimeout(()=>{
+                redLight.style.backgroundColor='transparent';
+                yellowLight.style.backgroundColor='yellow';
+                greenLight.style.backgroundColor='transparent';
+                
+                     
+                setTimeout(()=>{
+                redLight.style.backgroundColor='transparent';
+                yellowLight.style.backgroundColor='transparent';
+                greenLight.style.backgroundColor='green';
+
+                changeLights();
+            },3000);//greenlight
+
+            },2000);//yellowlight
+        },3000); //redlight
+
+    }
+          changeLights();    
+
+
+        </script>
+</body>
+</html> 
+            
+            
+        
+            
+            
+        
+
+
+       
+        
+        
+ 
